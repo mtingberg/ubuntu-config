@@ -1,0 +1,6 @@
+#!/bin/bash
+
+set -e
+
+which git || sudo apt-get install -y git-core
+which gitk || sudo apt-get install -y gitk
