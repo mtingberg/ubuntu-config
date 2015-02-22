@@ -1,0 +1,10 @@
+#!/bin/bash
+
+set -e
+
+DEST=~
+
+if [ ! -f $DEST/.bash_aliases ]; then
+    cp .bash_aliases $DEST
+fi
+
