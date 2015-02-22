@@ -1,0 +1,15 @@
+#!/bin/bash
+
+set -e
+
+DEST=~
+
+mkdir -p $DEST
+
+if [ ! -f $DEST/.git_aliases ]; then
+    cp .git_aliases $DEST
+
+    echo "# Some useful git aliases" >> ~/.bashrc
+    echo ". ~/.git_aliases" >> ~/.bashrc
+    echo "" >> ~/.bashrc
+fi
