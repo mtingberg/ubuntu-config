@@ -1,0 +1,16 @@
+#!/bin/bash
+
+set -e
+
+error_handler() {
+    echo ""
+    echo "Note:"
+    echo "If the git-core package cannot be found, try uncommenting the Archive,"
+    echo "Extras and Canonical partner repositories in /etc/apt/sources.list."
+    echo "Then run: sudo apt-get update"
+    echo ""
+}
+
+trap 'error_handler' ERR
+
+which git || sudo apt-get install -y git-core
