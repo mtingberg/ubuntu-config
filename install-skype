@@ -1,0 +1,5 @@
+#!/bin/bash
+
+set -e
+
+which skype || sudo apt-get install -y skype
