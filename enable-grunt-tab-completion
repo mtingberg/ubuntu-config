@@ -1,0 +1,10 @@
+#!/bin/bash
+
+set -e
+
+if [ $(grep -c "\$(grunt --completion=bash)" ~/.bashrc) -eq 0 ]
+then
+    echo "# enable tab auto-completion for Grunt" >> ~/.bashrc
+    echo "eval \"\$(grunt --completion=bash)\"" >> ~/.bashrc
+    echo "" >> ~/.bashrc
+fi
