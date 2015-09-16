@@ -1,0 +1,14 @@
+#!/bin/bash
+
+set -e
+
+wget -qO- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
+
+. ~/.nvm/nvm.sh
+
+nvm install 0.10
+nvm alias default 0.10
+nvm use default
+
+# update npm to the most recent version
+sudo npm install npm -g
