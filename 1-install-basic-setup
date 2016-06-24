@@ -1,0 +1,13 @@
+#!/bin/bash
+
+set -e
+
+./enable-bash-aliases
+./enable-case-insensitive-tab-completion
+./enable-classic-scrollbars
+./install-git
+./install-gitk
+./enable-git-aliases
+./enable-git-custom-prompt
+./install-vim
+
