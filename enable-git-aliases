@@ -2,14 +2,36 @@
 
 set -e
 
-DEST=~
+#
+# remove all aliases at the same time: git config --global --remove-section alias
+# remove a single alias: git config --global --unset alias.myAlias
+#
 
-mkdir -p $DEST
-
-if [ ! -f $DEST/.git_aliases ]; then
-    cp .git_aliases $DEST
-
-    echo "# Some useful git aliases" >> ~/.bashrc
-    echo ". ~/.git_aliases" >> ~/.bashrc
-    echo "" >> ~/.bashrc
-fi
+git config --global alias.la '!git config -l | grep alias | cut -c 7- | sort'
+git config --global alias.co checkout
+git config --global alias.st status
+git config --global alias.ci commit
+git config --global alias.br branch
+git config --global alias.unstage '!git reset HEAD -- # unstage/ uncache all added files'
+git config --global alias.ls '!git log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate'
+git config --global alias.ll '!git log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat'
+git config --global alias.filelog '!git log -u # lists files changed per commit'
+git config --global alias.fl '!git log -u # lists files changed per commit'
+git config --global alias.x '!git branch -lvv'
+git config --global alias.cp cherry-pick
+git config --global alias.dc '!git diff --cached # same as staged'
+git config --global alias.ds '!git diff --staged # same as cached'
+git config --global alias.r reset
+git config --global alias.r1 '!git reset HEAD^'
+git config --global alias.r2 '!git reset HEAD^^'
+#git config --global alias.rh '!git reset --hard'
+#git config --global alias.rh1 '!git reset HEAD^ --hard'
+#git config --global alias.rh2 '!git reset HEAD^^ --hard'
+git config --global alias.v '!git --version'
+git config --global alias.k '!gitk --all &'
+git config --global alias.lc '!git config --list | sort'
+#git config --global alias.redocommit = reset --soft HEAD^
+#git config --global alias.busythisweek = shortlog --since=one.week.ago
+#git config --global alias.editconflicted = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; $EDITOR `f`"
+#git config --global alias.addconflicted = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add `f`"
+#git config --global alias.showignored = clean -ndX
