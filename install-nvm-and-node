@@ -6,9 +6,13 @@ wget -qO- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | b
 
 . ~/.nvm/nvm.sh
 
-nvm install 0.10
-nvm alias default 0.10
-nvm use default
+echo "Suggest completing the installation by running the following commands:"
+echo ""
+echo "nvm install <node_version>"
+echo "nvm alias default <node_version>"
+echo "nvm use default"
+echo ""
 
-# update npm to the most recent version
-sudo npm install npm -g
+echo "# update npm to the most recent version"
+echo "sudo npm install npm -g"
+echo ""
