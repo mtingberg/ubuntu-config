@@ -5,3 +5,5 @@ alias gdc="git diff --cached"
 alias ga="git add"
 alias gaa="git add --all"
 alias gl="git log"
+
+alias gw="./gradlew"
