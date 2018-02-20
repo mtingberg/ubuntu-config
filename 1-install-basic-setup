@@ -9,4 +9,8 @@ set -e
 ./enable-git-aliases
 ./enable-git-custom-prompt
 ./install-vim
+./install-curl
+./install-additional-wallpapers
+./install-xclip
 
+cat ./post-install-info.txt
