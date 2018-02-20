@@ -3,7 +3,11 @@
 set -e
 
 which vim || sudo apt-get install -y vim
-grep 'export EDITOR=vim' ~/.bashrc || (echo 'export EDITOR=vim' >> ~/.bashrc)
+
+grep 'export EDITOR=vim' ~/.bashrc || cat << EOF >> ~/.bashrc
+
+export EDITOR=vim
+EOF
 
 if [ ! -f $HOME/.vimrc ]; then
     cp .vimrc $HOME
