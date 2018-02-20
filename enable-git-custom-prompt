@@ -9,7 +9,7 @@ mkdir -p $DEST
 if [ ! -f $DEST/git-custom-prompt.sh ]; then
     cp git-custom-prompt.sh $DEST
 
+    echo "" >> ~/.bashrc
     echo "# Custom prompt showing git information when in repo directory" >> ~/.bashrc
     echo ". ~/scripts/git-custom-prompt.sh" >> ~/.bashrc
-    echo "" >> ~/.bashrc
 fi
