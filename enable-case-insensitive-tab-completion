@@ -2,5 +2,13 @@
 
 set -e
 
-grep -s 'completion-ignore-case' ~/.inputrc || (echo "set completion-ignore-case on" >> ~/.inputrc)
+# Bash ignores the system wide /etc/inputrc if a user .inputrc is present.
+# Fix by including /etc/inputrc in ~/.inputrc.
+
+
+if [ ! -f ~/.inputrc ]; then
+    echo "\$include /etc/inputrc" >> ~/.inputrc
+    echo "" >> ~/.inputrc
+    echo "set completion-ignore-case on" >> ~/.inputrc
+fi
 
