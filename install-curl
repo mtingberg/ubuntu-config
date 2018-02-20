@@ -1,0 +1,6 @@
+#!/bin/bash
+
+set -e
+
+which curl || sudo apt-get install -y curl
+
