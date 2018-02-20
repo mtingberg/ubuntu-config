@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -e
+
+./install-git
+./install-gitk
+./enable-git-aliases
+./enable-git-custom-prompt
+./install-nvm
+
+cat ./2-post-install-info.txt

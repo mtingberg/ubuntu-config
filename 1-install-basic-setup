@@ -3,14 +3,9 @@
 set -e
 
 ./enable-bash-aliases
-./enable-case-insensitive-tab-completion
-./install-git
-./install-gitk
-./enable-git-aliases
-./enable-git-custom-prompt
 ./install-vim
 ./install-curl
 ./install-additional-wallpapers
 ./install-xclip
 
-cat ./post-install-info.txt
+cat ./1-post-install-info.txt
