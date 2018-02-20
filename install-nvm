@@ -2,17 +2,15 @@
 
 set -e
 
-wget -qO- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
+if [ ! -f $HOME/.nvm/nvm.sh ]; then
+    wget -qO- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
 
-. ~/.nvm/nvm.sh
+    . ~/.nvm/nvm.sh
 
-echo "Suggest completing the installation by running the following commands:"
-echo ""
-echo "nvm install <node_version>"
-echo "nvm alias default <node_version>"
-echo "nvm use default"
-echo ""
+    nvm install --lts
+    nvm alias default stable
+    nvm use default
 
-echo "# update npm to the most recent version"
-echo "npm install npm -g"
-echo ""
+    echo "Updating npm to the most recent version"
+    npm install npm -g
+fi
