@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# If you find the default (Ubuntu 16) scrollbar width too narrow
+
+set -e
+
+cat << EOF >> ~/.config/gtk-3.0/gtk.css
+.scrollbar {
+  -GtkRange-slider-width: 14;
+  -GtkRange-stepper-size: 14;
+}
+EOF
+
+echo "" >> ~/.config/gtk-3.0/gtk.css
+
